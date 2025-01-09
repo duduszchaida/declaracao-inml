@@ -6,27 +6,25 @@ const App = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     const formData = new FormData();
     formData.append("cpfcnpj", cpfcnpj);
-
-    try {
-      const response = await axios.post(
-        "http://localhost:8000/generate-pdf/",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
-
   
-      const fileUrl = `http://localhost:8000${response.data.file_url}`;
-      console.log("PDF gerado:", fileUrl);
-
-     
-      window.open(fileUrl, "_blank");
+    try {
+      const response = await axios.post("http://localhost:8000/generate-pdf/", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+        responseType: "blob", // Importante para arquivos binários
+      });
+  
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", "declaracao.pdf"); // Nome do arquivo a ser baixado
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     } catch (error) {
       console.error("Erro ao gerar o PDF:", error.response.data);
     }
