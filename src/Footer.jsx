@@ -6,7 +6,7 @@ const Footer = () => {
           <div className="image-arrow">
             <img
               src="https://inml.com.br/pg/wp-content/uploads/2023/01/trio-de-setas_04.png"
-              class="image-arrow-down"
+              className="image-arrow-down"
             />
           </div>
         </div>
