@@ -35,7 +35,7 @@ const App = () => {
     formData.append("cpfcnpj", cpfcnpj);
   
     try {
-      const response = await axios.post("http://localhost:8000/generate-pdf/", formData, {
+      const response = await axios.post("https://versao-final-backenduvicorn-app-app-host.onrender.com/generate-pdf/", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
