@@ -35,7 +35,7 @@ const App = () => {
     formData.append("cpfcnpj", cpfcnpj);
   
     try {
-      const response = await axios.post("/api/generate-pdf/", formData, {
+      const response = await axios.post("http://204.216.143.43:8000/generate-pdf/", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
