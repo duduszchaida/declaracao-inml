@@ -267,3 +267,62 @@ input:focus {
   width: 100%;
   gap: calc(2 * var(--template-spacing));
 }
+@media (max-width: 680px) {
+.image-top-screen-navbar{
+  margin-left: 40px;
+  display: inline-block;
+  margin-right: auto;
+}
+.students-area{
+  display: contents;
+  margin-right: 20px;
+}
+.form-principal{
+  width: 290px;
+}
+.paragraph-title {
+  padding: 0 20px;
+}
+.total-blue-marine {
+    height: 850px;
+  }
+
+
+.copyrighting-text {
+    color: rgb(255, 255, 255);
+    margin-left: 15px;
+    font-size: 0.9em;
+    line-height: 31px;
+    width: 100%;
+
+}
+*{
+  padding: 0;
+  margin: 0;
+}
+.image-inml-two-omg {
+  width: 130px;
+  margin-left: 40px;
+  margin-top: 60px;
+}
+.image-parceria {
+  width: 200px;
+  margin-top: 40px;
+}
+.do-not-loose {
+  text-align: center;
+}
+.turn-on {
+  text-align: center;
+  padding: 8px;
+}
+.form-cpf{
+  margin-top: 24px;
+}
+.paragraph-title{
+  margin-top: 18px;
+}
+.button-send{
+  margin-top: 42px;
+}
+}
