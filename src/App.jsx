@@ -3,6 +3,8 @@ import { useState } from "react";
 
 const App = () => {
   const [cpfcnpj, setCpfCnpj] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const formatCpfCnpj = (value) => {
     // Remove qualquer caractere que não seja número
@@ -26,11 +28,14 @@ const App = () => {
   const handleInputChange = (e) => {
     const formattedValue = formatCpfCnpj(e.target.value);
     setCpfCnpj(formattedValue);
+    setErrorMessage("");
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+    setErrorMessage(""); 
+    setIsLoading(true);
+    
     const formData = new FormData();
     formData.append("cpfcnpj", cpfcnpj);
   
@@ -50,7 +55,14 @@ const App = () => {
       link.click();
       document.body.removeChild(link);
     } catch (error) {
-      console.error("Erro ao gerar o PDF:", error.response.data);
+      if (error.response && error.response.status === 404) {
+        setErrorMessage("Nenhum dado encontrado para o CPF/CNPJ fornecido.");
+      } else {
+        setErrorMessage("Erro ao gerar o PDF. Tente novamente mais tarde.");
+      }
+      console.error("Erro ao gerar o PDF:", error);
+    }finally {
+      setIsLoading(false); // Desativa o estado de carregamento
     }
   };
 
@@ -73,15 +85,18 @@ const App = () => {
                 value={cpfcnpj}
                 onChange={handleInputChange}
                 maxLength={18} 
+                disabled={isLoading}
               />
             </div>
           </div>
           <p className="paragraph-info"> * Exemplo: 123.456.789-00 ou 123.456.78/0001-99</p>
         </div>
-
-        <button className="button-send" type="submit">
-          Gerar declaração
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
+        
+        <button className="button-send" disabled={isLoading} type="submit">
+         {isLoading ? "Gerando..." : "Gerar declaração"} {/* Texto condicional */}
         </button>
+        {isLoading && <div className="loading-spinner"></div>} {/* Bolinha de carregamento */}
       </form>
     </div>
   );
