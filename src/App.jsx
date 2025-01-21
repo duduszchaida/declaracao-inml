@@ -3,8 +3,9 @@ import { useState } from "react";
 
 const App = () => {
   const [cpfcnpj, setCpfCnpj] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  
 
   const formatCpfCnpj = (value) => {
     // Remove qualquer caractere que não seja número
@@ -33,8 +34,8 @@ const App = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setErrorMessage(""); 
     setIsLoading(true);
+    setErrorMessage("");
     
     const formData = new FormData();
     formData.append("cpfcnpj", cpfcnpj);
