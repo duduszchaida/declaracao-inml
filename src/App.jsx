@@ -70,7 +70,7 @@ const App = () => {
   return (
     <div className="form-principal">
       <div className="paragraph-title">
-        <p className="quantity-two">Gerar declaração de quitação anual de débito</p>
+        <p className="quantity-two">Gerar o demonstrativo de pagamentos realizados em 2024</p>
       </div>
       <form className="form-style" onSubmit={handleSubmit}>
         <div className="form-cpf">
