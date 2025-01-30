@@ -95,7 +95,7 @@ const App = () => {
         {errorMessage && <p className="error-message">{errorMessage}</p>}
         
         <button className="button-send" disabled={isLoading} type="submit">
-         {isLoading ? "Gerando..." : "Gerar declaração"} {/* Texto condicional */}
+         {isLoading ? "Gerando..." : "Gerar Demonstrativo"} {/* Texto condicional */}
         </button>
         {isLoading && <div className="loading-spinner"></div>} {/* Bolinha de carregamento */}
       </form>
