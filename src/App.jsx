@@ -8,17 +8,17 @@ const App = () => {
   
 
   const formatCpfCnpj = (value) => {
-    // Remove qualquer caractere que não seja número
+  
     value = value.replace(/\D/g, "");
 
     if (value.length <= 11) {
-      // Formata como CPF (###.###.###-##)
+      
       return value
         .replace(/(\d{3})(\d)/, "$1.$2")
         .replace(/(\d{3})(\d)/, "$1.$2")
         .replace(/(\d{3})(\d{1,2})$/, "$1-$2");
     } else {
-      // Formata como CNPJ (##.###.###/####-##)
+      
       return value
         .replace(/(\d{2})(\d)/, "$1.$2")
         .replace(/(\d{3})(\d)/, "$1.$2")
@@ -45,13 +45,13 @@ const App = () => {
         headers: {
           "Content-Type": "multipart/form-data",
         },
-        responseType: "blob", // Importante para arquivos binários
+        responseType: "blob", 
       });
   
       const url = window.URL.createObjectURL(new Blob([response.data]));
       const link = document.createElement("a");
       link.href = url;
-      link.setAttribute("download", "declaracao.pdf"); // Nome do arquivo a ser baixado
+      link.setAttribute("download", "declaracao.pdf"); 
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -63,7 +63,7 @@ const App = () => {
       }
       console.error("Erro ao gerar o PDF:", error);
     }finally {
-      setIsLoading(false); // Desativa o estado de carregamento
+      setIsLoading(false); 
     }
   };
 
