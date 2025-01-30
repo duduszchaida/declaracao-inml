@@ -19,7 +19,7 @@ const Footer = () => {
           <div className="link-button-total">
             <a
               className="link-button"
-              href="https://inml.com.br/pg/instituto-nacional-de-medecina-laboratorial-cursos-pos-graduacoes/"
+              href="https://inml.com.br/pg/"
               
               style={{textDecoration: "none"}}    
             >
