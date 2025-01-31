@@ -293,7 +293,7 @@ input:focus {
   margin-top: 10px;
 }
 .loading-message{
-  margin-top: 10px;
+  margin-top: 18px;
   font-size: 15px;
   color: #333;
   font-weight: bold;
@@ -312,7 +312,7 @@ input:focus {
   margin-right: auto;
 }
 .loading-message{
-  margin-top: 10px;
+  margin-top: 16px;
   font-size: 14px;
   color: #333;
   font-weight: bold;
