@@ -98,6 +98,12 @@ const App = () => {
          {isLoading ? "Gerando..." : "Gerar Demonstrativo"} {/* Texto condicional */}
         </button>
         {isLoading && <div className="loading-spinner"></div>} {/* Bolinha de carregamento */}
+        <p className="loading-message">
+            Se for necessária alguma correção, envie sua solicitação por e-mail
+            para
+            <a href="mailto:financeiro@inml.com.br"> financeiro@inml.com.br</a>
+        </p>
+        
       </form>
     </div>
   );
