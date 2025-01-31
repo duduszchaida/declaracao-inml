@@ -292,6 +292,18 @@ input:focus {
   font-weight: bold;
   margin-top: 10px;
 }
+.loading-message{
+  margin-top: 10px;
+  font-size: 15px;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+}
+.loading-message a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
 
 @media (max-width: 680px) {
 .image-top-screen-navbar{
@@ -299,6 +311,13 @@ input:focus {
   display: inline-block;
   margin-right: auto;
 }
+.loading-message{
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+ }
 .students-area{
   display: contents;
   margin-right: 20px;
